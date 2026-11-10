@@ -13,7 +13,7 @@ const calendarContent = {
         u1: { prompt: "Hur många minuter går det på 1 timme och 20 minuter?", answer: ["80", "80 minuter", "80minuter", "80 min", "80min"] },
         u2: { prompt: "Rudolf börjar sin flyglektion klockan 13:00 och flyger i 1 timme och 45 minuter. Vad är klockan när lektionen slutar?", answer: ["14:45", "14.45", "klockan 14:45", "kl 14:45"] },
         desc: "Härligt jobbat! Glöm inte att lösa båda uppgifterna för att tända en bakgrundsstjärna.", 
-        rhyme: "", video: "", starVideo: "https://www.youtube.com/embed/WM7M7zSMJcw?autoplay=1" 
+        rhyme: "", video: "", starVideo: "https://www.youtube.com/embed/WM7M7zSMJcw?autoplay=1&mute=0" 
     },
     3: { 
         title: "Torsdag 3 December", 
@@ -99,7 +99,7 @@ const calendarContent = {
         dayType: "minigame", 
         minigameType: "division",
         desc: "Glad Lucia & 3:e Advent! Klara divisionsspelet genom att svara rätt på 20 frågor (tabellerna 1–10). När alla 20 stjärnor i ramen lyser tänds det tredje adventsljuset!", 
-        video: "https://www.youtube.com/embed/QVc5rAzMQCs?autoplay=1&mute=1", starVideo: "" 
+        video: "https://www.youtube.com/embed/QVc5rAzMQCs?autoplay=1&mute=0", starVideo: "" 
     },
     14: { 
         title: "Måndag 14 December", 
@@ -184,6 +184,6 @@ const calendarContent = {
         title: "Julafton 24 December", 
         dayType: "weekend", 
         desc: "GOD JUL! Njut av Kalle Anka och hans vänner och ha en underbar julafton!", 
-        video: "https://www.youtube.com/embed/l49a9z8xBL0?autoplay=1&mute=1", starVideo: "https://www.youtube.com/embed/joWd2P-6keM?autoplay=1&mute=0" 
+        video: "https://www.youtube.com/embed/l49a9z8xBL0?autoplay=1&mute=0", starVideo: "https://www.youtube.com/embed/joWd2P-6keM?autoplay=1&mute=0" 
     }
 };

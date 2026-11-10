@@ -259,7 +259,7 @@
         let clickTimer = null;
         let lastClickedCell = null;
         let audioCtx = null;
-        // Syntetisk ljudeffektsgenerator via Web Audio API
+        let lastTouchTime = 0;
         function playSound(type) {
             if (!soundEnabled) return;
             try {
@@ -375,6 +375,7 @@
         }
         function handleCellPointerDown(r, c, e) {
             if (e && e.button !== 0) return;
+            if (Date.now() - lastTouchTime < 500) return;
             isMouseDown = true;
             processCellClick(r, c);
         }
@@ -392,11 +393,13 @@
         window.addEventListener('touchend', () => { isMouseDown = false; });
         function handleTouchStart(r, c, e) {
             e.preventDefault();
+            lastTouchTime = Date.now();
             isMouseDown = true;
             processCellClick(r, c);
         }
         function handleTouchMove(e) {
             e.preventDefault();
+            lastTouchTime = Date.now();
             if (!isMouseDown) return;
             const touch = e.touches[0];
             const target = document.elementFromPoint(touch.clientX, touch.clientY);

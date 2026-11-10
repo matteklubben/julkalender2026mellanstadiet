@@ -13,7 +13,7 @@ const calendarContent = {
         u1: { prompt: "Hur många minuter går det på 1 timme och 20 minuter?", answer: ["80", "80 minuter", "80minuter", "80 min", "80min"] },
         u2: { prompt: "Rudolf börjar sin flyglektion klockan 13:00 och flyger i 1 timme och 45 minuter. Vad är klockan när lektionen slutar?", answer: ["14:45", "14.45", "klockan 14:45", "kl 14:45"] },
         desc: "Härligt jobbat! Glöm inte att lösa båda uppgifterna för att tända en bakgrundsstjärna.", 
-        rhyme: "", video: "", starVideo: "https://www.youtube.com/embed/WM7M7zSMJcw?autoplay=1&mute=1" 
+        rhyme: "", video: "", starVideo: "https://www.youtube.com/embed/WM7M7zSMJcw?autoplay=1&mute=0" 
     },
     3: { 
         title: "Torsdag 3 December", 
@@ -29,7 +29,7 @@ const calendarContent = {
         u1: { prompt: "Fyll i talet som saknas i mönstret: 5, 10, 15, __, 25, 30", answer: ["20"] },
         u2: { prompt: "Tomten bygger en trappa av snöblock. Första steget har 6 block, andra har 12, tredje har 18. Hur många block har det fjärde steget?", answer: ["24", "24 block", "24 snöblock", "24block"] },
         desc: "Fredagens utmaning! Lös båda frågorna för att tända helgens första stjärna!", 
-        rhyme: "", video: "", starVideo: "https://www.youtube.com/embed/aAkMkVFwAoo?autoplay=1&mute=1" 
+        rhyme: "", video: "", starVideo: "https://www.youtube.com/embed/aAkMkVFwAoo?autoplay=1&mute=0" 
     },
     5: { 
         title: "Lördag 5 December", 
@@ -44,7 +44,7 @@ const calendarContent = {
         dayType: "minigame",
         minigameType: "multiplication",
         desc: "2:a Advent! Klara multiplikationsspelet genom att svara rätt på 20 frågor (tabellerna 1–10). Varje rätt svar tänder en stjärna i ramen. När alla 20 stjärnor lyser tänds det andra adventsljuset!", 
-        video: "", starVideo: "https://www.youtube.com/embed/E8gmARGvPlI?autoplay=1&mute=1" 
+        video: "", starVideo: "https://www.youtube.com/embed/E8gmARGvPlI?autoplay=1&mute=0" 
     },
     7: { 
         title: "Måndag 7 December", 
@@ -60,7 +60,7 @@ const calendarContent = {
         u1: { prompt: "450 + 380", answer: ["830"] },
         u2: { prompt: "En ren äter 370 gram mossa på morgonen och 540 gram på kvällen. Hur mycket mossa äter renen under hela dagen?", answer: ["910", "910 gram", "910g", "910 gram mossa"] },
         desc: "Tomteverkstaden ångar på! Lös uppgifterna och samla fler stjärnor.", 
-        rhyme: "", video: "", starVideo: "https://www.youtube.com/embed/ESWWoF657VE?start=22&autoplay=1&mute=1" 
+        rhyme: "", video: "", starVideo: "https://www.youtube.com/embed/ESWWoF657VE?start=22&autoplay=1&mute=0" 
     },
     9: { 
         title: "Onsdag 9 December", 
@@ -76,7 +76,7 @@ const calendarContent = {
         u1: { prompt: "8 × 9", answer: ["72"] },
         u2: { prompt: "Det står 6 renar i ett spann, och varje ren har 11 bjällror på sina seldon. Hur många bjällror finns det sammanlagt?", answer: ["66", "66 bjällror", "66bjällror"] },
         desc: "Snyggt klarat! Lös frågorna för att tända stjärnan.", 
-        rhyme: "", video: "", starVideo: "https://www.youtube.com/embed/xi4OpBMbyGY?autoplay=1&mute=1" 
+        rhyme: "", video: "", starVideo: "https://www.youtube.com/embed/xi4OpBMbyGY?autoplay=1&mute=0" 
     },
     11: { 
         title: "Fredag 11 December", 
@@ -92,7 +92,7 @@ const calendarContent = {
         u1: { prompt: "63 ÷ 7", answer: ["9"] },
         u2: { prompt: "Tomtemor har bakat 72 lussebullar och lägger dem i påsar med 8 i varje. Hur många påsar blir det?", answer: ["9", "9 påsar", "9påsar"] },
         desc: "Lördagsutmaning! Lös kluringarna och tänd dagens stjärna.",
-        video: "", starVideo: "https://www.youtube.com/embed/kpSOWZCSPxo?autoplay=1&mute=1" 
+        video: "", starVideo: "https://www.youtube.com/embed/kpSOWZCSPxo?autoplay=1&mute=0" 
     },
     13: { 
         title: "Söndag 13 December - Glad Lucia & 3:e Advent", 
@@ -107,7 +107,7 @@ const calendarContent = {
         u1: { prompt: "60 × 4", answer: ["240"] },
         u2: { prompt: "Varje tärna i luciatåget bär 3 levande ljus. Om det är 40 tärnor i tåget, hur många ljus brinner totalt?", answer: ["120", "120 ljus", "120ljus"] },
         desc: "Start på veckan efter Lucia! Lös båda frågorna.", 
-        rhyme: "", video: "", starVideo: "https://www.youtube.com/embed/j9jbdgZidu8?autoplay=1&mute=1" 
+        rhyme: "", video: "", starVideo: "https://www.youtube.com/embed/j9jbdgZidu8?autoplay=1&mute=0" 
     },
     15: { 
         title: "Tisdag 15 December", 
@@ -123,7 +123,7 @@ const calendarContent = {
         u1: { prompt: "360 ÷ 6", answer: ["60"] },
         u2: { prompt: "En säck med 280 apelsiner ska fördelas lika på 4 olika tomtefamiljer. Hur många apelsiner får varje familj?", answer: ["70", "70 apelsiner", "70apelsiner"] },
         desc: "Knäck och julgodis koka! Lös uppgifterna.", 
-        rhyme: "", video: "", starVideo: "https://www.youtube.com/embed/TS9vmrBTxEo?autoplay=1&mute=1" 
+        rhyme: "", video: "", starVideo: "https://www.youtube.com/embed/TS9vmrBTxEo?autoplay=1&mute=0" 
     },
     17: { 
         title: "Torsdag 17 December", 
@@ -139,7 +139,7 @@ const calendarContent = {
         u1: { prompt: "520 + 290", answer: ["810"] },
         u2: { prompt: "Tomteverkstaden skickar 480 paket på måndagen och 350 paket på tisdagen. Hur många paket har de skickat totalt under dessa två dagar?", answer: ["830", "830 paket", "830paket"] },
         desc: "Fredagsutmaning! Lös båda frågorna för att tända stjärnan.", 
-        video: "", starVideo: "https://www.youtube.com/embed/RH-xd5bPKTA?autoplay=1&mute=1" 
+        video: "", starVideo: "https://www.youtube.com/embed/RH-xd5bPKTA?autoplay=1&mute=0" 
     },
     19: { 
         title: "Lördag 19 December", 
@@ -154,7 +154,7 @@ const calendarContent = {
         dayType: "minigame", 
         minigameType: "mixed",
         desc: "Fjärde advent! Klara den mixade utmaningen (multiplikation & division 1–10) för att tända 20 stjärnor i ramen och tända det fjärde adventsljuset!", 
-        video: "", starVideo: "https://www.youtube.com/embed/wKhRnZZ0cJI?autoplay=1&mute=1" 
+        video: "", starVideo: "https://www.youtube.com/embed/wKhRnZZ0cJI?autoplay=1&mute=0" 
     },
     21: { 
         title: "Måndag 21 December", 
@@ -170,7 +170,7 @@ const calendarContent = {
         u1: { prompt: "80 ÷ 10", answer: ["8"] },
         u2: { prompt: "120 glaskulor ska packas i lådor där det får plats 10 kulor i varje låda. Hur många lådor behövs?", answer: ["12", "12 lådor", "12lådor"] },
         desc: "Uppesittarstämning! Lös båda matematikuppgifterna.", 
-        video: "", starVideo: "https://www.youtube.com/embed/4Q7cIyWadUg?autoplay=1&mute=1" 
+        video: "", starVideo: "https://www.youtube.com/embed/4Q7cIyWadUg?autoplay=1&mute=0" 
     },
     23: { 
         title: "Onsdag 23 December - Dan före dan", 
@@ -184,6 +184,6 @@ const calendarContent = {
         title: "Julafton 24 December", 
         dayType: "weekend", 
         desc: "GOD JUL! Njut av Kalle Anka och hans vänner och ha en underbar julafton!", 
-        video: "https://www.youtube.com/embed/l49a9z8xBL0?autoplay=1&mute=1", starVideo: "https://www.youtube.com/embed/joWd2P-6keM?autoplay=1&mute=1" 
+        video: "https://www.youtube.com/embed/l49a9z8xBL0?autoplay=1&mute=1", starVideo: "https://www.youtube.com/embed/joWd2P-6keM?autoplay=1&mute=0" 
     }
 };

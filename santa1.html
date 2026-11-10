@@ -29,48 +29,45 @@
             -webkit-user-select: none;
             touch-action: manipulation;
         }
-
         .font-christmas {
             font-family: 'Great Vibes', cursive;
         }
-
         .font-header {
             font-family: 'Cinzel', serif;
         }
-
         .font-nunito {
             font-family: 'Nunito', sans-serif;
         }
-
         /* Glaskänsla & guldram i kalenderstil */
         .game-panel {
             background: rgba(10, 5, 8, 0.88);
             border: 1px solid rgba(255, 215, 0, 0.35);
             box-shadow: 0 12px 35px rgba(0,0,0,0.8), inset 0 0 15px rgba(255, 215, 0, 0.1);
         }
-
         .touch-btn {
             background: rgba(255, 215, 0, 0.15);
             border: 1.5px solid rgba(255, 215, 0, 0.4);
             backdrop-filter: blur(4px);
-            transition: all 0.15s ease;
+            transition: all 0.12s ease;
+            touch-action: none;
+            cursor: pointer;
         }
-
-        .touch-btn:active {
-            background: rgba(255, 215, 0, 0.4);
-            transform: scale(0.95);
+        .touch-btn:active, .touch-btn.active {
+            background: rgba(255, 215, 0, 0.45);
+            transform: scale(0.94);
+            border-color: rgba(255, 215, 0, 0.85);
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
         }
     </style>
 </head>
 <body class="p-2 sm:p-4">
-
     <!-- HUVUDBEHÅLLARE FÖR SPELET -->
     <div class="relative w-full max-w-4xl game-panel rounded-2xl shadow-2xl overflow-hidden flex flex-col items-center justify-center p-2 sm:p-3">
         
         <!-- CANVAS YTA -->
         <div class="relative w-full aspect-[16/9] min-h-[320px] rounded-xl overflow-hidden border border-amber-500/30">
             <canvas id="gameCanvas" class="w-full h-full block bg-slate-950"></canvas>
-
+            
             <!-- STARTSKÄRM OVERLAY -->
             <div id="startScreen" class="absolute inset-0 bg-gradient-to-b from-amber-950/90 via-slate-950/95 to-red-950/90 flex flex-col items-center justify-center p-6 z-30 text-center">
                 <div class="max-w-md space-y-3">
@@ -79,14 +76,14 @@
                         Tomtens Julmatte
                     </h1>
                     <p class="text-amber-100/80 font-medium text-xs sm:text-sm leading-relaxed">
-                        Skjut snögubbar med snöbollar (Blanksteg), svara på mattefrågor genom att hoppa underifrån (Pil Upp) och ta dig till den magiska dörren!
+                        Skjut snögubbar med snöbollar, svara på mattefrågor genom att hoppa underifrån och ta dig till den magiska dörren! Spela med styrplatta/tummar eller tangentbord.
                     </p>
                     <button id="startBtn" class="mt-4 bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-500 hover:to-yellow-500 text-slate-950 font-header font-bold text-base sm:text-xl px-8 py-3.5 rounded-xl shadow-lg border border-amber-300 transform transition hover:scale-105 active:scale-95 cursor-pointer">
                         Starta Spelet ✨
                     </button>
                 </div>
             </div>
-
+            
             <!-- VINST / SLUTSKÄRM OVERLAY -->
             <div id="winScreen" class="hidden absolute inset-0 bg-gradient-to-b from-amber-950/95 via-slate-950/95 to-emerald-950/95 flex flex-col items-center justify-center p-6 z-30 text-center">
                 <div class="max-w-md bg-black/60 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-amber-500/40 shadow-2xl space-y-4">
@@ -108,7 +105,7 @@
                     </button>
                 </div>
             </div>
-
+            
             <!-- GAME OVER OVERLAY -->
             <div id="gameOverScreen" class="hidden absolute inset-0 bg-black/85 backdrop-blur-sm flex flex-col items-center justify-center p-6 z-30 text-center">
                 <div class="max-w-sm bg-slate-950/90 p-6 rounded-2xl border border-red-500/40 shadow-2xl space-y-4">
@@ -122,15 +119,31 @@
             </div>
         </div>
 
-        <!-- TOUCH-KONTROLLER FÖR MOBIL / SURFPLATTA -->
-        <div class="w-full bg-slate-950/90 border-t border-amber-500/20 p-2 sm:p-3 flex justify-between items-center sm:hidden select-none mt-2 rounded-xl">
-            <div class="flex gap-2">
-                <button id="btnLeft" class="touch-btn w-12 h-12 rounded-xl flex items-center justify-center text-xl">👈</button>
-                <button id="btnRight" class="touch-btn w-12 h-12 rounded-xl flex items-center justify-center text-xl">👉</button>
+        <!-- NAVIGERINGSKONTROLLER FÖR STYRPLATTA & PEKSKÄRM -->
+        <div class="w-full bg-slate-950/90 border-t border-amber-500/30 p-2 sm:p-3 flex justify-between items-center select-none mt-2 rounded-xl shadow-lg">
+            <!-- VÄNSTER TUMME / STYRPLATTA: PIL BAK & PIL FRAM -->
+            <div class="flex gap-2 items-center">
+                <button id="btnLeft" aria-label="Gå bakåt" class="touch-btn h-12 px-4 rounded-xl flex items-center gap-1.5 text-base font-bold text-amber-200 hover:bg-amber-500/25 active:scale-95 transition-transform">
+                    ◀️ <span class="text-xs sm:text-sm font-bold">Bak</span>
+                </button>
+                <button id="btnRight" aria-label="Gå framåt" class="touch-btn h-12 px-4 rounded-xl flex items-center gap-1.5 text-base font-bold text-amber-200 hover:bg-amber-500/25 active:scale-95 transition-transform">
+                    <span class="text-xs sm:text-sm font-bold">Fram</span> ▶️
+                </button>
             </div>
-            <div class="flex gap-2">
-                <button id="btnShoot" class="touch-btn px-3 h-12 rounded-xl flex items-center justify-center text-xs font-bold text-amber-200">❄️ Skjut</button>
-                <button id="btnJump" class="touch-btn px-4 h-12 rounded-xl flex items-center justify-center text-xs font-bold text-emerald-300">⬆️ Hoppa</button>
+
+            <!-- ANVISNING FÖR STYRPLATTA & TANGENTBORD -->
+            <div class="hidden md:flex flex-col items-center text-[11px] text-amber-200/70 font-medium tracking-wide">
+                <span>🎮 Tum- & Styrplattestyrning</span>
+            </div>
+
+            <!-- HÖGER TUMME / STYRPLATTA: SKJUT OCH HOPPA -->
+            <div class="flex gap-2 items-center">
+                <button id="btnShoot" aria-label="Skjut snöboll" class="touch-btn h-12 px-4 rounded-xl flex items-center gap-1.5 text-xs sm:text-sm font-bold text-cyan-200 hover:bg-cyan-500/25 active:scale-95 transition-transform">
+                    ❄️ <span>Skjut</span>
+                </button>
+                <button id="btnJump" aria-label="Hoppa" class="touch-btn h-12 px-5 rounded-xl flex items-center gap-1.5 text-xs sm:text-sm font-bold text-emerald-300 hover:bg-emerald-500/25 active:scale-95 transition-transform">
+                    ⬆️ <span>Hoppa</span>
+                </button>
             </div>
         </div>
     </div>
@@ -208,12 +221,14 @@
             if (e.key === ' ') keys.shoot = false;
         });
 
-        // Touch Control helper
-        const bindTouch = (id, action) => {
+        // Pointer / Touch / Trackpad Controller Bindings
+        const bindControl = (id, action) => {
             const btn = document.getElementById(id);
             if (!btn) return;
+            
             const handleStart = (e) => {
                 e.preventDefault();
+                btn.classList.add('active');
                 if (!gameRunning) return;
                 if (action === 'jump') {
                     if (!keys.jump) player.jump();
@@ -225,21 +240,34 @@
                     keys[action] = true;
                 }
             };
+            
             const handleEnd = (e) => {
                 e.preventDefault();
+                btn.classList.remove('active');
                 if (action === 'jump') keys.jump = false;
                 else if (action === 'shoot') keys.shoot = false;
                 else keys[action] = false;
             };
-            btn.addEventListener('touchstart', handleStart);
-            btn.addEventListener('touchend', handleEnd);
+
+            // Pointer Events hanterar både styrplatta, mus och pekskärm
+            btn.addEventListener('pointerdown', handleStart);
+            btn.addEventListener('pointerup', handleEnd);
+            btn.addEventListener('pointerleave', handleEnd);
+            btn.addEventListener('pointercancel', handleEnd);
+
+            // Fallback för touch och mousedown/mouseup
+            btn.addEventListener('touchstart', handleStart, { passive: false });
+            btn.addEventListener('touchend', handleEnd, { passive: false });
             btn.addEventListener('mousedown', handleStart);
             btn.addEventListener('mouseup', handleEnd);
+            btn.addEventListener('mouseleave', handleEnd);
+            btn.addEventListener('contextmenu', (e) => e.preventDefault());
         };
-        bindTouch('btnLeft', 'left');
-        bindTouch('btnRight', 'right');
-        bindTouch('btnJump', 'jump');
-        bindTouch('btnShoot', 'shoot');
+
+        bindControl('btnLeft', 'left');
+        bindControl('btnRight', 'right');
+        bindControl('btnJump', 'jump');
+        bindControl('btnShoot', 'shoot');
 
         // Player Object
         const player = {
@@ -598,8 +626,8 @@
                 ]
             }
         ];
-
         let currentLevel = null;
+
         function loadLevel(idx) {
             currentLevelIndex = idx;
             const template = JSON.parse(JSON.stringify(levelTemplates[idx]));
@@ -792,6 +820,7 @@
                 });
             });
         }
+
         function checkBaubleCollection() {
             currentLevel.baubles.forEach(b => {
                 if (!b.collected) {
@@ -804,6 +833,7 @@
                 }
             });
         }
+
         function takeLife() {
             lives--;
             player.invulnerableTimer = 60;
@@ -840,13 +870,11 @@
                 ctx.roundRect(screenX - 20, zone.y - 50, 270, 200, 16);
                 ctx.fill();
                 ctx.stroke();
-
                 // Question Text
                 ctx.fillStyle = '#fde047';
                 ctx.font = '700 28px "Cinzel", serif';
                 ctx.textAlign = 'center';
                 ctx.fillText(`${zone.numA} × ${zone.numB} = ?`, screenX + 115, zone.y - 10);
-
                 // Option Choice Blocks
                 zone.blocks.forEach(block => {
                     const bScreenX = block.x - cameraX;
@@ -861,7 +889,6 @@
                     ctx.font = '800 22px "Montserrat", sans-serif';
                     ctx.fillText(block.val, bScreenX + block.w / 2, block.y + 34);
                 });
-
                 // Barrier Gate
                 if (!zone.isFinal) {
                     const barrierScreenX = zone.barrierX - cameraX;
@@ -899,17 +926,14 @@
                         ctx.roundRect(doorScreenX, dy, dw, dh, [36, 36, 0, 0]);
                         ctx.fill();
                         ctx.stroke();
-
                         ctx.fillStyle = '#78350f';
                         ctx.beginPath();
                         ctx.roundRect(doorScreenX + 10, dy + 12, dw - 20, dh - 18, [24, 24, 0, 0]);
                         ctx.fill();
-
                         ctx.fillStyle = '#fde047';
                         ctx.beginPath();
                         ctx.arc(doorScreenX + dw - 16, dy + dh / 2 + 6, 6, 0, Math.PI * 2);
                         ctx.fill();
-
                         ctx.fillStyle = '#15803d';
                         ctx.beginPath();
                         ctx.arc(doorScreenX + dw / 2, dy + 28, 12, 0, Math.PI * 2);
@@ -918,7 +942,6 @@
                         ctx.beginPath();
                         ctx.arc(doorScreenX + dw / 2, dy + 24, 4, 0, Math.PI * 2);
                         ctx.fill();
-
                         ctx.fillStyle = '#22c55e';
                         ctx.beginPath();
                         ctx.roundRect(doorScreenX - 8, dy - 34 + Math.sin(Date.now() * 0.008) * 3, dw + 16, 26, 8);
@@ -946,14 +969,13 @@
 
         // Environment Rendering
         function drawEnvironment() {
-            // Sky Gradient (Dark Advents röd-lila tema)
+            // Sky Gradient
             const skyGrad = ctx.createLinearGradient(0, 0, 0, canvas.height);
             skyGrad.addColorStop(0, '#120206');
             skyGrad.addColorStop(0.6, '#28060d');
             skyGrad.addColorStop(1, '#3d0a14');
             ctx.fillStyle = skyGrad;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-
             // Trees
             currentLevel.trees.forEach(t => {
                 const screenX = t.x - cameraX * 0.7;
@@ -969,7 +991,6 @@
                 ctx.beginPath(); ctx.moveTo(0, -110); ctx.lineTo(-20, -85); ctx.lineTo(20, -85); ctx.closePath(); ctx.fill();
                 ctx.restore();
             });
-
             // Platforms
             currentLevel.platforms.forEach(p => {
                 const screenX = p.x - cameraX;
@@ -983,7 +1004,6 @@
                 ctx.roundRect(screenX, p.y - 4, p.w, 14, [6, 6, 0, 0]);
                 ctx.fill();
             });
-
             // Baubles
             currentLevel.baubles.forEach(b => {
                 if (b.collected) return;
@@ -1007,7 +1027,6 @@
             ctx.fillStyle = 'rgba(10, 5, 8, 0.85)';
             ctx.strokeStyle = 'rgba(255, 215, 0, 0.4)';
             ctx.lineWidth = 1.5;
-
             // Level Badge
             ctx.beginPath();
             ctx.roundRect(16, 16, 140, 44, 14);
@@ -1017,7 +1036,6 @@
             ctx.font = '700 18px "Cinzel", serif';
             ctx.textAlign = 'left';
             ctx.fillText(`Nivå ${currentLevelIndex + 1}`, 32, 44);
-
             // Snowball Ammo Count
             ctx.beginPath();
             ctx.roundRect(170, 16, 110, 44, 14);
@@ -1029,7 +1047,6 @@
             ctx.fillStyle = '#ffffff';
             ctx.font = '800 18px "Montserrat", sans-serif';
             ctx.fillText(`${ammo}`, 218, 44);
-
             // Baubles Score
             ctx.beginPath();
             ctx.roundRect(295, 16, 110, 44, 14);
@@ -1041,7 +1058,6 @@
             ctx.fillStyle = '#ffd700';
             ctx.font = '800 18px "Montserrat", sans-serif';
             ctx.fillText(`${score}`, 342, 44);
-
             // Lives Hearts
             ctx.textAlign = 'right';
             ctx.font = '24px sans-serif';
@@ -1092,7 +1108,6 @@
             loadLevel(currentLevelIndex);
             gameRunning = true;
         });
-
         window.onload = function() {
             loadLevel(0);
             gameLoop();

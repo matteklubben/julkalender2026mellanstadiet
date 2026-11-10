@@ -3,7 +3,7 @@ const calendarContent = {
         title: "Tisdag 1 December", 
         dayType: "weekday",
         u1: { prompt: "340 + 250", answer: ["590"] },
-        u2: { prompt: "Nisse packar 420 julklappar på morgonen och 160 på eftermiddagen. Hur många julklappar packar han totalt under dagen?", answer: ["580", "580 julklappar", "580julklappar"] },
+        u2: { prompt: "Nisse packar 420 julklappar på morgonen och 260 på eftermiddagen. Hur många julklappar packar han totalt under dagen?", answer: ["680", "680 julklappar", "680julklappar"] },
         desc: "Välkommen till årets magiska julkalender! Svara på dagens två frågor för att tända en guldstjärna!", 
         rhyme: "", video: "", starVideo: "" 
     },
@@ -58,7 +58,7 @@ const calendarContent = {
         title: "Tisdag 8 December", 
         dayType: "weekday",
         u1: { prompt: "450 + 380", answer: ["830"] },
-        u2: { prompt: "En ren äter 270 gram mossa på morgonen och 540 gram på kvällen. Hur mycket mossa äter renen under hela dagen?", answer: ["810", "810 gram", "810g", "810 gram mossa"] },
+        u2: { prompt: "En ren äter 370 gram mossa på morgonen och 540 gram på kvällen. Hur mycket mossa äter renen under hela dagen?", answer: ["910", "910 gram", "910g", "910 gram mossa"] },
         desc: "Tomteverkstaden ångar på! Lös uppgifterna och samla fler stjärnor.", 
         rhyme: "", video: "", starVideo: "https://www.youtube.com/embed/ESWWoF657VE?start=22&autoplay=1&mute=1" 
     },
@@ -66,7 +66,7 @@ const calendarContent = {
         title: "Onsdag 9 December", 
         dayType: "weekday",
         u1: { prompt: "Fyll i talen som saknas i mönstret : 40, 35, 30, __, 20, __", answer: ["25 och 15", "25, 15", "25,15", "25 15"] },
-        u2: { prompt: "Temperaturen på tomtens semester var 30°C. Den sjunker med 4 grader varje timme. Vad är temperaturen efter 3 timmar?", answer: ["18", "18 grader", "18°c", "18°"] },
+        u2: { prompt: "Temperaturen på tomtens solsemester är 30°C. Den sjunker med 4 grader varje timme. Vad är temperaturen efter 3 timmar?", answer: ["18", "18 grader", "18°c", "18°"] },
         desc: "Halvvägs genom veckan! Du kämpar på jättebra.", 
         rhyme: "", video: "", starVideo: "" 
     },
@@ -74,7 +74,7 @@ const calendarContent = {
         title: "Torsdag 10 December", 
         dayType: "weekday",
         u1: { prompt: "8 × 9", answer: ["72"] },
-        u2: { prompt: "Det står 6 renar i ett spann, och varje ren har 7 bjällror på sina seldon. Hur många bjällror finns det sammanlagt?", answer: ["42", "42 bjällror", "42bjällror"] },
+        u2: { prompt: "Det står 6 renar i ett spann, och varje ren har 11 bjällror på sina seldon. Hur många bjällror finns det sammanlagt?", answer: ["66", "66 bjällror", "66bjällror"] },
         desc: "Snyggt klarat! Lös frågorna för att tända stjärnan.", 
         rhyme: "", video: "", starVideo: "https://www.youtube.com/embed/xi4OpBMbyGY?autoplay=1&mute=1" 
     },
@@ -176,7 +176,7 @@ const calendarContent = {
         title: "Onsdag 23 December - Dan före dan", 
         dayType: "weekday", 
         u1: { prompt: "9 × 7", answer: ["63"] },
-        u2: { prompt: "Dagen före dopparedagen tillverkas 8 stora granar. I varje gran hängs 6 röda rosetter. Hur många rosetter går det åt totalt?", answer: ["48", "48 rosetter", "48rosetter"] },
+        u2: { prompt: "Dagen före dopparedagen tillverkas 12 stora granar. I varje gran hängs 6 röda rosetter. Hur många rosetter går det åt totalt?", answer: ["72", "72 rosetter", "72rosetter"] },
         desc: "Dan före dopparedagen! Svara på frågorna för att tända sista stjärnan innan julafton.", 
         video: "", starVideo: "" 
     },

@@ -65,8 +65,8 @@ const calendarContent = {
     9: { 
         title: "Onsdag 9 December", 
         dayType: "weekday",
-        u1: { prompt: "Fyll i talen som saknas i mönstret (skriv med kommatecken eller och, t.ex. 25 och 15): 40, 35, 30, __, 20, __", answer: ["25 och 15", "25, 15", "25,15", "25 15"] },
-        u2: { prompt: "Temperaturen på Nordpolen var 30°C kallt. Den sjunker med 4 grader varje timme. Vad är temperaturen efter 3 timmar?", answer: ["42", "42 grader", "42°c", "42°", "-42", "42 grader kallt"] },
+        u1: { prompt: "Fyll i talen som saknas i mönstret : 40, 35, 30, __, 20, __", answer: ["25 och 15", "25, 15", "25,15", "25 15"] },
+        u2: { prompt: "Temperaturen på tomtens semester var 30°C. Den sjunker med 4 grader varje timme. Vad är temperaturen efter 3 timmar?", answer: ["18", "18 grader", "18°c", "18°"] },
         desc: "Halvvägs genom veckan! Du kämpar på jättebra.", 
         rhyme: "", video: "", starVideo: "" 
     },

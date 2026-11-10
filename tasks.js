@@ -13,7 +13,7 @@ const calendarContent = {
         u1: { prompt: "Hur många minuter går det på 1 timme och 20 minuter?", answer: ["80", "80 minuter", "80minuter", "80 min", "80min"] },
         u2: { prompt: "Rudolf börjar sin flyglektion klockan 13:00 och flyger i 1 timme och 45 minuter. Vad är klockan när lektionen slutar?", answer: ["14:45", "14.45", "klockan 14:45", "kl 14:45"] },
         desc: "Härligt jobbat! Glöm inte att lösa båda uppgifterna för att tända en bakgrundsstjärna.", 
-        rhyme: "", video: "", starVideo: "https://www.youtube.com/embed/WM7M7zSMJcw?autoplay=1&mute=0" 
+        rhyme: "", video: "", starVideo: "https://www.youtube.com/embed/WM7M7zSMJcw?autoplay=1" 
     },
     3: { 
         title: "Torsdag 3 December", 

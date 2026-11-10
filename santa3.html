@@ -463,6 +463,11 @@
         }
         function validateSantaPlacement(r, c) {
             const config = LEVEL_CONFIGS[currentLevel];
+            // Kontrollera om rutan ingår i banans lösning
+            if (config.solutionSantas) {
+                const isCorrect = config.solutionSantas.some(s => s.r === r && s.c === c);
+                if (!isCorrect) return "Incorrect placement";
+            }
             const size = config.size;
             const region = config.regionMap[r][c];
             for (let i = 0; i < size; i++) {
